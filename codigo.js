@@ -94,35 +94,59 @@ function mostrarTablaMult()
     console.log(ej6);
 }
 
+
 let random = Math.floor(Math.random() * 10) + 1;
+
 //ej7
-function adivinarNumRnd()
-{
+function adivinarNumRnd() {
+    let numero = parseFloat(prompt("Ingrese un número"));
+    let ej7 = document.getElementById("ej7");
 
-let numero =parseFloat(prompt("Ingrese un numero"));
-while(numero!=random)
-{
-let adivino;
-let ej7=document.getElementById("ej7");
+    while (numero !== random) 
+        {
+        if (numero < random) 
+            {
+            ej7.innerHTML = "Su número es menor al número generado";
+            console.log(ej7);
+        } else if (numero > random) {
+            ej7.innerHTML = "Su número es mayor al número generado";
+            console.log(ej7);
+        }
+        
+        numero = parseFloat(prompt("Ingrese un número"));
+    }
 
-if(numero<random)
-{
-    ej7.innerHTML="Su numero es menor al numero generado " ;
+    ej7.innerHTML = "¡Felicitaciones! Adivinaste el número";
     console.log(ej7);
 }
-else if(numero>random)
-{
-    ej7.innerHTML="Su numero es mayor al numero generado " ;
-    console.log(ej7);
-}
-    
+
+//8
+function contarVocales() {
+    let contadorVocales = 0;
+    let palabra = prompt("Ingrese la palabra").toLowerCase(); 
+    let vocales = ["a", "e", "i", "o", "u"];
 
 
-}
-    ej7.innerHTML="Felicitaciones! Adivinaste el numero" ;
-    console.log(ej7);
+    for (let i = 0; i < palabra.length; i++) {
+        if (vocales.includes(palabra[i])) { 
+            contadorVocales++;
+        }
+    }
 
+    let ej8 = document.getElementById("ej8");
+
+    if (contadorVocales > 0) {
+        ej8.innerHTML = `Su palabra tiene ${contadorVocales} vocales`;
+        console.log(ej8);
+    } else {
+        ej8.innerHTML = "Su palabra no tiene vocales";
+        console.log(ej8);
+    }
 }
+
+//9
+
+
 
 
 
