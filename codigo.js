@@ -104,11 +104,11 @@ function adivinarNumRnd() {
 
     while (numero !== random) {
         if (isNaN(numero)) {
-            ej7.innerHTML = "Por favor, ingrese un número válido.";
+            alert = "Por favor, ingrese un número válido.";
         } else if (numero < random) {
-            ej7.innerHTML = "Su número es menor al número generado. Intente nuevamente.";
+            alert = "Su número es menor al número generado. Intente nuevamente.";
         } else if (numero > random) {
-            ej7.innerHTML = "Su número es mayor al número generado. Intente nuevamente.";
+            alert = "Su número es mayor al número generado. Intente nuevamente.";
         }
 
         numero = parseInt(prompt("Ingrese otro número:"));
