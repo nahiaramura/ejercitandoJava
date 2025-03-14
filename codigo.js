@@ -95,30 +95,28 @@ function mostrarTablaMult()
 }
 
 
+//ej7
 let random = Math.floor(Math.random() * 10) + 1;
 
-//ej7
 function adivinarNumRnd() {
-    let numero = parseFloat(prompt("Ingrese un número"));
     let ej7 = document.getElementById("ej7");
+    let numero = parseInt(prompt("Ingrese un número entre 1 y 10:"));
 
-    while (numero !== random) 
-        {
-        if (numero < random) 
-            {
-            ej7.innerHTML = "Su número es menor al número generado";
-            console.log(ej7);
+    while (numero !== random) {
+        if (isNaN(numero)) {
+            ej7.innerHTML = "Por favor, ingrese un número válido.";
+        } else if (numero < random) {
+            ej7.innerHTML = "Su número es menor al número generado. Intente nuevamente.";
         } else if (numero > random) {
-            ej7.innerHTML = "Su número es mayor al número generado";
-            console.log(ej7);
+            ej7.innerHTML = "Su número es mayor al número generado. Intente nuevamente.";
         }
-        
-        numero = parseFloat(prompt("Ingrese un número"));
+
+        numero = parseInt(prompt("Ingrese otro número:"));
     }
 
-    ej7.innerHTML = "¡Felicitaciones! Adivinaste el número";
-    console.log(ej7);
+    ej7.innerHTML = "¡Felicitaciones! Adivinaste el número.";
 }
+
 
 //8
 function contarVocales() {
@@ -145,6 +143,30 @@ function contarVocales() {
 }
 
 //9
+function invertirPalabra() {
+    let palabra = prompt("Ingrese una palabra:");
+    let invertida = palabra.split("").reverse().join("");
+    let ej9 = document.getElementById("ej9");
+    ej9.innerHTML =("Palabra invertida:", invertida);
+    console.log(ej9);
+}
+
+//ej 10
+function detectarPalindromo() {
+    let palabra = prompt("Ingrese una palabra:").toLowerCase(); 
+    let invertida = palabra.split("").reverse().join(""); 
+
+    let ej10 = document.getElementById("ej10");
+    if (palabra === invertida) {
+        ej10.innerHTML =`"${palabra}" es un palíndromo.`;
+        console.log(ej10);
+    } else {
+        ej10.innerHTML =`"${palabra}" no es un palíndromo.`;
+        console.log(ej10);
+    }
+}
+
+
 
 
 
