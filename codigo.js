@@ -105,11 +105,7 @@ function adivinarNumRnd() {
     while (numero !== random) {
         if (isNaN(numero)) {
             alert = "Por favor, ingrese un número válido.";
-        } else {
-            
-        }
-        
-        if (numero < random) {
+        } else if (numero < random) {
             alert = "Su número es menor al número generado. Intente nuevamente.";
         } else if (numero > random) {
             alert = "Su número es mayor al número generado. Intente nuevamente.";
